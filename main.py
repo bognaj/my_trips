@@ -27,7 +27,7 @@ def process_gpx_to_df(directory, file_name):
 
 if __name__ == "__main__":
     lat, lon = 50.325625, 16.944352
-    zoom_start = 12
+    zoom_start = 4
     dir = 'gpx_files'
     m = folium.Map(location=[lat, lon], zoom_start = zoom_start, tiles=None)
     folium.TileLayer('openstreetmap', name='OpenStreet Map').add_to(m)
