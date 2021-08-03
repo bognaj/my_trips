@@ -30,11 +30,20 @@ if __name__ == "__main__":
     lat, lon = 50.325625, 16.944352
     zoom_start = 12
     df, points = process_gpx_to_df('dfbg.gpx')
-
+    df_sw, points_sw = process_gpx_to_df('swiebodzice_run.gpx')
+    df_daisy, points_daisy = process_gpx_to_df('daisy.gpx')
+    df_trojg, points_trojg = process_gpx_to_df('trojg.gpx')
+    df_walig, points_walig = process_gpx_to_df('walig.gpx')
+    df_sokol, points_sokol = process_gpx_to_df('sokol.gpx')
     m = folium.Map(location=[ df.Latitude.mean(), df.Longitude.mean()], zoom_start = zoom_start, tiles=None)
     folium.TileLayer('openstreetmap', name='OpenStreet Map').add_to(m)
 
     folium.PolyLine(points, color='red', weight=4.5, opacity=.5).add_to(m)
+    folium.PolyLine(points_sw, color='blue', weight=4.5, opacity=.5).add_to(m)
+    folium.PolyLine(points_daisy, color='green', weight=4.5, opacity=.5).add_to(m)
+    folium.PolyLine(points_trojg, color='red', weight=4.5, opacity=.5).add_to(m)
+    folium.PolyLine(points_walig, color='blue', weight=4.5, opacity=.5).add_to(m)
+    folium.PolyLine(points_sokol, color='green', weight=4.5, opacity=.5).add_to(m)
 
     m.save('index.html')
 
