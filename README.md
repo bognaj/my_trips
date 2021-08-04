@@ -1,2 +1,2 @@
 # my_trips
-Place to put my mountains trips on the map
+Place to put my mountains activities on the map
