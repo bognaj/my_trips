@@ -28,14 +28,26 @@ def process_gpx_to_df(directory, file_name):
 if __name__ == "__main__":
     lat, lon = 50.325625, 16.944352
     zoom_start = 4
-    dir = 'gpx_files'
+    dir_mount = 'gpx_files_mountains'
+    dir_run = 'gpx_files_running'
+    dir_walk = 'gpx_files_walking'
     m = folium.Map(location=[lat, lon], zoom_start = zoom_start, tiles=None)
     folium.TileLayer('openstreetmap', name='OpenStreet Map').add_to(m)
 
-    for file in os.listdir(dir):
+    for file in os.listdir(dir_mount):
         if file.endswith(".gpx"):
-            df, points = process_gpx_to_df(dir, file)
+            df, points = process_gpx_to_df(dir_mount, file)
             folium.PolyLine(points, color='red', weight=4.5, opacity=.5).add_to(m)
+
+    for file in os.listdir(dir_run):
+        if file.endswith(".gpx"):
+            df, points = process_gpx_to_df(dir_run, file)
+            folium.PolyLine(points, color='blue', weight=4.5, opacity=.5).add_to(m)
+
+    for file in os.listdir(dir_walk):
+        if file.endswith(".gpx"):
+            df, points = process_gpx_to_df(dir_walk, file)
+            folium.PolyLine(points, color='green', weight=4.5, opacity=.5).add_to(m)
 
     m.save('index.html')
 
