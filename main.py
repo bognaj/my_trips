@@ -52,7 +52,7 @@ if __name__ == "__main__":
             df, points = process_gpx_to_df(dir_walk, file)
             folium.PolyLine(points, color='green', weight=4.5, opacity=.5).add_to(m)
 
-    places_df = pd.read_csv('interesting_places.csv', header = 0, encoding= 'unicode_escape')
+    places_df = pd.read_csv('interesting_nature.csv', header = 0, encoding= 'unicode_escape')
 
     for index, row in places_df.iterrows():
         tooltip = row["place"]
