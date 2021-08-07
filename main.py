@@ -56,8 +56,15 @@ if __name__ == "__main__":
 
     for index, row in places_df.iterrows():
         tooltip = row["place"]
-        folium.Marker([row["lat"], row["lon"]], popup="<b>" + str(row["place"]) + "</b>" + "<br>" + str(row["region"]), icon=folium.Icon(icon="heart"), tooltip=tooltip).add_to(m)
+        folium.Marker([row["lat"], row["lon"]], popup="<b>" + str(row["place"]) + "</b>" + "<br>" + str(row["region"]), icon=folium.Icon(icon="tree-conifer", color = 'green'), tooltip=tooltip).add_to(m)
 
+    rest_df = pd.read_csv('restaurants.csv', header = 0, encoding= 'unicode_escape')
+
+    for index, row in rest_df.iterrows():
+        tooltip = row["place"]
+        folium.Marker([row["lat"], row["lon"]], popup="<b>" + str(row["place"]) + "</b>" + "<br>" + str(row["food"]), icon=folium.Icon(icon="cutlery", color = 'red'), tooltip=tooltip).add_to(m)
+    
+    
     m.save('index.html')
 
 
