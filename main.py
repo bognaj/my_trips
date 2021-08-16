@@ -64,7 +64,12 @@ if __name__ == "__main__":
         tooltip = row["place"]
         folium.Marker([row["lat"], row["lon"]], popup="<b>" + str(row["place"]) + "</b>" + "<br>" + str(row["food"]), icon=folium.Icon(icon="cutlery", color = 'red'), tooltip=tooltip).add_to(m)
     
-    
+    track_df = pd.read_csv('tracks.csv', header = 0, encoding= 'unicode_escape')
+
+    for index, row in track_df.iterrows():
+        tooltip = row["desc"]
+        folium.Marker([row["lat"], row["lon"]], popup='<a href="url">' + str(row["link"]) + "</a>", icon=folium.Icon(icon="tag", color = 'black'), tooltip=tooltip).add_to(m)
+
     m.save('index.html')
 
 
