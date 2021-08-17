@@ -154,8 +154,6 @@ pycparser==2.18
 pycrypto==2.6.1
 pycurl==7.43.0.2
 pyflakes==2.0.0
-pygame==1.9.6
-pygame-menu==1.96.1
 Pygments==2.9.0
 pyinstaller==4.0
 pyinstaller-hooks-contrib==2020.8
