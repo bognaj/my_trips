@@ -99,7 +99,6 @@ llvmlite==0.24.0
 locket==0.2.0
 lxml==4.2.5
 matplotlib==3.0.3
-matplotlib-inline==0.1.2
 menuinst==1.4.14
 mistune==0.8.3
 mkl-fft==1.0.4
