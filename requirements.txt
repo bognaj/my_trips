@@ -174,9 +174,6 @@ pytest-openfiles==0.3.0
 pytest-remotedata==0.3.0
 python-dateutil==2.8.1
 pytz==2018.5
-pywin32==223
-pywin32-ctypes==0.2.0
-pywinpty==0.5.4
 PyYAML==3.13
 pyzmq==22.0.3
 QtAwesome==0.4.4
