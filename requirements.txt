@@ -49,7 +49,6 @@ ExifRead==2.3.1
 fast-histogram==0.5
 fastcache==1.0.2
 filelock==3.0.8
-Fiona==1.8.4
 Flask==1.0.2
 Flask-Cors==3.0.6
 folium==0.12.0
@@ -99,7 +98,6 @@ lazy-object-proxy==1.4.3
 llvmlite==0.24.0
 locket==0.2.0
 lxml==4.2.5
-mariadb==1.0.6
 MarkupSafe==1.0
 matplotlib==3.0.3
 matplotlib-inline==0.1.2
@@ -217,8 +215,6 @@ sortedcollections==1.0.1
 sortedcontainers==2.0.5
 Sphinx==1.7.9
 sphinxcontrib-websupport==1.1.0
-spyder==3.3.1
-spyder-kernels==0.2.6
 SQLAlchemy==1.2.11
 statsmodels==0.9.0
 sympy==1.1.1
