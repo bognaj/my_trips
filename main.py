@@ -40,17 +40,17 @@ if __name__ == "__main__":
     for file in os.listdir(dir_mount):
         if file.endswith(".gpx"):
             df, points = process_gpx_to_df(dir_mount, file)
-            folium.PolyLine(points, color='red', weight=4.5, opacity=.5).add_to(m)
+            folium.PolyLine(points, popup = file[:-4], color='red', weight=4.5, opacity=.5).add_to(m)
 
     for file in os.listdir(dir_run):
         if file.endswith(".gpx"):
             df, points = process_gpx_to_df(dir_run, file)
-            folium.PolyLine(points, color='blue', weight=4.5, opacity=.5).add_to(m)
+            folium.PolyLine(points, popup = file[:-4], color='blue', weight=4.5, opacity=.5).add_to(m)
 
     for file in os.listdir(dir_walk):
         if file.endswith(".gpx"):
             df, points = process_gpx_to_df(dir_walk, file)
-            folium.PolyLine(points, color='green', weight=4.5, opacity=.5).add_to(m)
+            folium.PolyLine(points, popup = file[:-4], color='green', weight=4.5, opacity=.5).add_to(m)
 
     places_df = pd.read_csv('interesting_nature.csv', header = 0, encoding= 'unicode_escape')
 
@@ -68,7 +68,7 @@ if __name__ == "__main__":
 
     for index, row in track_df.iterrows():
         tooltip = row["desc"]
-        folium.Marker([row["lat"], row["lon"]], popup='<a href="url">' + str(row["link"]) + "</a>", icon=folium.Icon(icon="tag", color = 'black'), tooltip=tooltip).add_to(m)
+        folium.Marker([row["lat"], row["lon"]], popup='<a>' + str(row["link"]) + "</a>", icon=folium.Icon(icon="tag", color = 'black'), tooltip=tooltip).add_to(m)
 
     m.save('index.html')
 
