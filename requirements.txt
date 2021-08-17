@@ -100,7 +100,6 @@ locket==0.2.0
 lxml==4.2.5
 matplotlib==3.0.3
 matplotlib-inline==0.1.2
-mccabe==0.6.1
 menuinst==1.4.14
 mistune==0.8.3
 mkl-fft==1.0.4
