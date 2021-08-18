@@ -72,4 +72,6 @@ if __name__ == "__main__":
 
     m.save('index.html')
 
+    m
+
 
